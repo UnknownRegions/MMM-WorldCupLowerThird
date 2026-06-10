@@ -1,0 +1,201 @@
+.mmm-worldcup-lowerthird {
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 33vh;
+  overflow: hidden;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(5, 7, 11, 0.84), rgba(3, 5, 9, 0.96));
+  color: #f8fafc;
+  font-family: var(--font-primary, "Roboto Condensed", "Roboto", Arial, sans-serif);
+}
+
+.wclt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.wclt-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e5e7eb;
+}
+
+.wclt-meta {
+  min-width: 0;
+  color: #94a3b8;
+  font-size: 0.74rem;
+  text-align: right;
+}
+
+.wclt-track {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 8px;
+}
+
+.wclt-match {
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-left: 3px solid #38bdf8;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.wclt-match--primary {
+  grid-row: span 3;
+  display: grid;
+  align-content: center;
+  min-height: 124px;
+}
+
+.wclt-match--live {
+  border-left-color: #ef4444;
+  background: rgba(69, 10, 10, 0.62);
+}
+
+.wclt-match--final {
+  border-left-color: #94a3b8;
+}
+
+.wclt-match--delayed {
+  border-left-color: #f59e0b;
+}
+
+.wclt-status {
+  margin-bottom: 5px;
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.wclt-match--primary .wclt-status {
+  font-size: 0.82rem;
+}
+
+.wclt-teams {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.wclt-team {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.wclt-team:last-child {
+  justify-content: flex-end;
+}
+
+.wclt-team-code {
+  flex: 0 0 auto;
+  min-width: 2.35em;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background: rgba(226, 232, 240, 0.12);
+  color: #e2e8f0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.wclt-team strong {
+  min-width: 0;
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wclt-match--primary .wclt-team strong,
+.wclt-match--primary .wclt-score {
+  font-size: 1.18rem;
+}
+
+.wclt-score {
+  min-width: 3.5em;
+  color: #f8fafc;
+  font-size: 1.02rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.wclt-match:not(.wclt-match--primary) .wclt-detail {
+  display: none;
+}
+
+.wclt-match:not(.wclt-match--primary) .wclt-team-code {
+  min-width: 2em;
+}
+
+.wclt-match:not(.wclt-match--primary) .wclt-team strong {
+  font-size: 0.86rem;
+}
+
+.wclt-match:not(.wclt-match--primary) .wclt-score {
+  min-width: 2.75em;
+  font-size: 0.86rem;
+}
+
+.wclt-match:not(.wclt-match--primary) .wclt-status {
+  margin-bottom: 4px;
+  font-size: 0.66rem;
+}
+
+.wclt-detail {
+  min-height: 1em;
+  margin-top: 5px;
+  overflow: hidden;
+  color: #94a3b8;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wclt-empty {
+  padding: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.64);
+  color: #cbd5e1;
+  font-size: 0.86rem;
+}
+
+.wclt-empty--error {
+  border-color: rgba(248, 113, 113, 0.4);
+  color: #fecaca;
+}
+
+@media (max-width: 480px) {
+  .mmm-worldcup-lowerthird {
+    padding: 10px;
+  }
+
+  .wclt-track {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .wclt-match--primary {
+    grid-row: auto;
+    min-height: 0;
+  }
+
+  .wclt-team strong {
+    font-size: 0.92rem;
+  }
+}

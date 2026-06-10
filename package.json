@@ -1,0 +1,18 @@
+{
+  "name": "mmm-worldcuplowerthird",
+  "version": "0.1.0",
+  "description": "MagicMirror lower-third module for World Cup fixtures, live scores, and results.",
+  "main": "MMM-WorldCupLowerThird.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "magicmirror",
+    "world-cup",
+    "soccer",
+    "football",
+    "lower-third"
+  ],
+  "author": "Admiral Palleon",
+  "license": "MIT"
+}

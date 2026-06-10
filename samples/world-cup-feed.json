@@ -1,0 +1,35 @@
+{
+  "matches": [
+    {
+      "id": "sample-live",
+      "utcDate": "2026-06-10T19:00:00Z",
+      "status": "LIVE",
+      "minute": 54,
+      "stage": "Group A",
+      "venue": "Estadio Azteca",
+      "homeTeam": { "name": "Mexico", "tla": "MEX" },
+      "awayTeam": { "name": "South Africa", "tla": "RSA" },
+      "score": { "fullTime": { "home": 1, "away": 1 } }
+    },
+    {
+      "id": "sample-next",
+      "utcDate": "2026-06-11T00:00:00Z",
+      "status": "SCHEDULED",
+      "stage": "Group B",
+      "venue": "SoFi Stadium",
+      "homeTeam": { "name": "United States", "tla": "USA" },
+      "awayTeam": { "name": "Canada", "tla": "CAN" },
+      "score": { "fullTime": { "home": null, "away": null } }
+    },
+    {
+      "id": "sample-final",
+      "utcDate": "2026-06-10T16:00:00Z",
+      "status": "FINISHED",
+      "stage": "Group C",
+      "venue": "MetLife Stadium",
+      "homeTeam": { "name": "Argentina", "tla": "ARG" },
+      "awayTeam": { "name": "Japan", "tla": "JPN" },
+      "score": { "fullTime": { "home": 2, "away": 0 } }
+    }
+  ]
+}
