@@ -1,4 +1,5 @@
 const NodeHelper = require("node_helper")
+const fs = require("fs")
 const http = require("http")
 const https = require("https")
 
@@ -51,12 +52,13 @@ module.exports = NodeHelper.create({
     const url = new URL(config.apiUrl)
     const client = url.protocol === "http:" ? http : https
     const headers = Object.assign({}, config.apiHeaders || {})
-    if (config.apiToken) {
+    const apiToken = this.resolveApiToken(instanceId, config)
+    if (apiToken) {
       const authHeaderName = config.authHeaderName || (config.provider === "football-data" ? "X-Auth-Token" : "Authorization")
       const tokenPrefix = config.tokenPrefix !== undefined
         ? config.tokenPrefix
         : authHeaderName === "Authorization" ? "Bearer " : ""
-      if (!headers[authHeaderName]) headers[authHeaderName] = `${tokenPrefix}${config.apiToken}`
+      if (!headers[authHeaderName]) headers[authHeaderName] = `${tokenPrefix}${apiToken}`
     }
 
     const request = client.request(url, {
@@ -101,5 +103,25 @@ module.exports = NodeHelper.create({
       request.destroy(new Error("Feed request timed out"))
     })
     request.end()
+  },
+
+  resolveApiToken(instanceId, config) {
+    if (config.apiTokenEnv && process.env[config.apiTokenEnv]) {
+      return process.env[config.apiTokenEnv].trim()
+    }
+
+    if (config.apiTokenFile) {
+      try {
+        return fs.readFileSync(config.apiTokenFile, "utf8").trim()
+      } catch (error) {
+        this.sendSocketNotification("MMM_WCLT_ERROR", {
+          instanceId,
+          message: "Configured API token file could not be read"
+        })
+        return ""
+      }
+    }
+
+    return config.apiToken || ""
   }
 })

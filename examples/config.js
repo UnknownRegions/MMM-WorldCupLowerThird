@@ -5,7 +5,7 @@
     title: "FIFA World Cup",
     provider: "football-data",
     apiUrl: "https://api.football-data.org/v4/competitions/WC/matches",
-    apiToken: "",
+    apiTokenEnv: "FOOTBALL_DATA_API_TOKEN",
     authHeaderName: "X-Auth-Token",
     refreshSeconds: 60,
     liveRefreshSeconds: 30,

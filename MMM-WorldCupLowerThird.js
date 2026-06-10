@@ -4,6 +4,8 @@ Module.register("MMM-WorldCupLowerThird", {
     provider: "generic",
     apiUrl: "",
     apiToken: "",
+    apiTokenEnv: "",
+    apiTokenFile: "",
     authHeaderName: "",
     tokenPrefix: "",
     apiHeaders: {},
